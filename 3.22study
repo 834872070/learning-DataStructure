@@ -1,0 +1,74 @@
+1.结点的构造：
+typedef struct Node
+{
+  int data;
+  struct Node *next;
+}
+
+2.线性表的结构体定义：
+#define maxSize 100
+typedef struct 
+{
+  int data[maxSize];
+  int length;                 //注意思考length和maxSize的区别
+}Sqlist;
+
+3.考试中的定义
+int [maxSize];
+int n;
+
+4.单链表结点的定义
+typedef struct LNode
+{
+    int data;
+    struct  LNode *next;
+}LNode;
+
+5.双链表结点的定义
+typedef struct DLNode
+{
+  int data;
+  struct DLNode *prior;
+  struct DLNode *next;
+}DLNode;
+
+6.指针指向结点
+LNode *A=(LNode*)malloc(sizeof(LNode));
+
+7.顺序表的查找操作
+int findElem(Sqlist  L,int x)
+{
+  int i;
+  for(i=0;i<L.length;i++)
+  {
+  if(x<L.data[i])
+  {
+  return i;
+  }
+  }
+  return i;       //扫描完没找到 任然指向表尾元素；
+}
+
+8.顺序表的插入操作
+void insertElem(Sqlist &L;int x)
+{
+  int p,i;
+  p=findElem(L,x);
+  for(i=l.length-1;i>=p;--i)
+  {
+  L.data[i+1]=L.data[i];
+  }
+  L.data[p]=x;
+  ++(length);
+ }
+}
+
+9.按元素值的查找算法
+int findElem(Sqlist L,int e)
+{
+  int i;
+  for(i=0;i<L.length;i++)
+  if(e==L.data[i])
+  return i;
+  return -1;
+}
